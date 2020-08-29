@@ -70,22 +70,22 @@
         palpites.textContent += palpiteUsuario + ' ';
 
         if (palpiteUsuario === numeroAleatorio) {
-            ultimoResultado.textContent = 'Acertou mizeravi !';
+            ultimoResultado.textContent = 'Parbéns! você acertou';
             ultimoResultado.style.backgroundColor = 'green';
             baixoOuAlto.textContent = '';
             configFimDeJogo();
 
         } else if (contagemPalpites === 10) {
-            ultimoResultado.textContent = '!!! ACABOU MIZERA !!!';
+            ultimoResultado.textContent = '!!! FIM DE JOGO !!!';
             baixoOuAlto.textContent = '';
             configFimDeJogo();
         } else {
-            ultimoResultado.textContent = 'Errou Mizeravi !';
+            ultimoResultado.textContent = 'Você errou !';
             ultimoResultado.style.backgroundColor = 'red';
             if (palpiteUsuario < numeroAleatorio) {
-                baixoOuAlto.textContent = 'Tá baixo caba! bota mais alto!';
+                baixoOuAlto.textContent = 'Esse número está muito baixo!';
             } else if (palpiteUsuario > numeroAleatorio) {
-                baixoOuAlto.textContent = 'Tá alto caba! bota mais baixo!';
+                baixoOuAlto.textContent = 'Esse número está muito alto!';
             }
         }
 
@@ -99,7 +99,7 @@
         campoPalpite.disabled = true;
         envioPalpite.disabled = true;
         botaoReinicio = document.createElement('button');
-        botaoReinicio.textContent = 'Vai mais uma Mizeravi?';
+        botaoReinicio.textContent = 'Jogar novamente!';
         document.body.appendChild(botaoReinicio);
         botaoReinicio.addEventListener('click', reiniciarJogo);
     }
